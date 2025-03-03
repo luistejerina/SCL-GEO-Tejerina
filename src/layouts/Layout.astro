@@ -14,7 +14,10 @@ import "../styles/global.css";
 		<meta name="generator" content={Astro.generator} />
 		<script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 		<link href="//www.iadb.org/modules/custom/api_menu_items/V.0.0.5/css/idb-tailwind.css?v=0.0.1" rel="stylesheet">
+		<link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+
 		<script is:inline src="//www.iadb.org/modules/custom/api_menu_items/V.0.0.5/js/main.js?v=0.0.1"></script>
+		
 		<title>Astro Basics</title>
 		<ClientRouter />
 	</head>
@@ -24,6 +27,7 @@ import "../styles/global.css";
 		<div class="slot">
 			<slot></slot>
 		</div>
+		<script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.js"></script>
 	</body>
 </html>
 

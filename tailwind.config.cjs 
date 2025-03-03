@@ -1,14 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-  theme: {
-    colors: {
-      bug: '#aedf78',
-      water: '#43ccff',
-      grass: '#00ca91',
-      fire: '#e95c4d',
-      normal: '#a5a5a5',
-    },
-  },
-  plugins: [],
-};
+	content: [
+		'./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+		'./node_modules/flowbite/**/*.js'
+	],
+	theme: {
+		extend: {},
+	},
+	plugins: [
+		require('flowbite/plugin')
+	],
+}

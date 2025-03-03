@@ -9,7 +9,6 @@ import relativeLinks from 'astro-relative-links';
 export default defineConfig({
   site: 'https://maurodeoliveira.github.io',
   base: '/scl-geo', // your repository name goes here, enclosed in '/'
-  publicDir: "static",
   integrations: [relativeLinks()],
   output: "static",
     vite: {

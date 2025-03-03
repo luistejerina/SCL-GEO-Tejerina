@@ -8,7 +8,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: 'https://maurodeoliveira.github.io',
   base: '/scl-geo', // your repository name goes here, enclosed in '/'
-  output: 'static',
+  output: "static",
     vite: {
         plugins: [tailwindcss()],
       },

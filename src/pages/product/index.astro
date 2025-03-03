@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
+
+import { getCollection } from 'astro:content';
+
+const products = await getCollection('products');
+
+console.log(products)
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	  <div class="grid grid-cols-3 gap-4">
+		{
+        	products.map(product=>{
+				const { slug, data } = product
+				const { title, status } = data
+				return ( 
+					<Card name={title} status={status} slug={slug}></Card> 
+				)
+			})
+		}			
+	  </div>
+</Layout>

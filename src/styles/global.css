@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+
+.geo-header{
+    background-color: #f0f4f6;
+    color:#1479d5;
+}
+
+.geo-card{
+    background-color: #f0f4f6;
+}
+
+.geo-number{
+    background-color: #019cdd;
+}
+
+.geo-status{
+    background-color: #8dba3b;
+}
+
+.geo-title{
+    background-color: #c8dfe1;
+    color:#004c6e;
+    font-weight: 500;
+    width:fit-content;
+    padding:6px;
+}

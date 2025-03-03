@@ -1,3 +1,10 @@
+---
+import Header from '../components/Header.astro';
+import { ClientRouter } from 'astro:transitions';
+import "../styles/global.css";
+---
+
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,18 +12,33 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+		<link href="//www.iadb.org/modules/custom/api_menu_items/V.0.0.5/css/idb-tailwind.css?v=0.0.1" rel="stylesheet">
+		<script is:inline src="//www.iadb.org/modules/custom/api_menu_items/V.0.0.5/js/main.js?v=0.0.1"></script>
 		<title>Astro Basics</title>
+		<ClientRouter />
 	</head>
+	
 	<body>
-		<slot />
+		<Header></Header>
+		<div class="slot">
+			<slot></slot>
+		</div>
 	</body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
+	.slot {
 		width: 100%;
 		height: 100%;
+		padding:25px;
 	}
+
+	.bg-geo{
+		background-color: red;
+		color:red;
+		fill: red;
+	}
+
+
 </style>

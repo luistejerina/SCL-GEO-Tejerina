@@ -1,14 +1,21 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
+import icon from 'astro-icon';
 
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://maurodeoliveira.github.io',
-  base: 'scl-geo', // your repository name goes here, enclosed in '/'
+
+  // your repository name goes here, enclosed in '/'
+  base: 'scl-geo',
+
   output:'static',
-    vite: {
-        plugins: [tailwindcss()],
-      },
+
+  vite: {
+      plugins: [tailwindcss()],
+    },
+
+  integrations: [icon()],
 });

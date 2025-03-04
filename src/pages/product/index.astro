@@ -5,21 +5,51 @@ import Card from '../../components/Card.astro';
 import { getCollection } from 'astro:content';
 
 const products = await getCollection('products');
+var t = await getCollection('products');
 
-console.log(products)
+export const prerender = false;
+const search = Astro.url.searchParams.get('status') || '';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+t = products;
+if(search != ''){
+	t = t.filter(product => product.data.status == search);
+}
+
+const status_array = products.map((product)=> product.data.status);
+
+
 ---
-
+<script>
+	
+	const select = document.getElementById('select') as HTMLSelectElement
+  
+	select?.addEventListener('change', () => {
+		const { value } = select.options[select.selectedIndex]
+		if(value != '')
+			document.location.href = '?status=' + value;
+		else
+			document.location.href = document.location.href.replace(/(\?.*)|(#.*)/g, "");
+	});
+  </script>
 <Layout>
-	  <div class="grid grid-cols-3 gap-4">
+	<div class="pt-5 pb-5">
+		<select id="select" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+			<option value=""></option>
+			{	status_array.map(c => {
+					if(search != '' && c == search)
+						return <option selected value={c}>{c}</option>
+						return <option value={c}>{c}</option>
+				})
+			}
+		</select>
+		</div>
+	  <div class="grid grid-cols-4 gap-4">
 		{
-        	products.map(product=>{
+        	t.map(product=>{				
 				const { slug, data } = product
-				const { title, status } = data
+				const { name, status, layers, division,image } = data
 				return ( 
-					<Card name={title} status={status} slug={slug}></Card> 
+					<Card name={name} status={status} slug={slug} layers={layers} division={division} hasLayers="true" image={image}></Card> 
 				)
 			})
 		}			

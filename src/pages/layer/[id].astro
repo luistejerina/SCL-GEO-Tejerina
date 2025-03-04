@@ -2,36 +2,23 @@
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import DetailCard from '../../components/DetailCard.astro';
 
 export async function getStaticPaths(){
 
-    const products = await getCollection('products');
+    const layers = await getCollection('layers');
 
-    return products.map((product)=>({
-        params: { id: product.slug},
-        props: { product}
+    return layers.map((layer)=>({
+        params: { id: layer.slug},
+        props: { layer}
     }))
 };
 
-
-const { product } = Astro.props
-const { data } = product
-const { title,status, description } = data
+const { layer } = Astro.props
+const { data } = layer
+const { name,status, description,image } = data
 ---
 
 <Layout>
-    <div class="grid grid-cols-2 gap-4">
-        <div>
-            <a href="/scl-geo/product" class="hover:underline opacity-70">Volver atrás</a>
-            <p class="text-3xl">{title}</p>
-            <p class="prose">{description}</p>
-            <div class="pt-4">
-                <span class="inline-block bg-lime-500 rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2"> { status }</span>
-                <span class="inline-block bg-sky-500 rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2"># products</span>    
-            </div>
-        </div>
-        <div>
-            <img class="w-full" src="/scl-geo/src/assets/background.png" alt="Sunset in the mountains">
-        </div>
-</div>
+    <DetailCard title={name} description={description} status={status} hasLayers="false" image={image}></DetailCard>
 </Layout>

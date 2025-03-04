@@ -19,10 +19,14 @@
     background-color: #8dba3b;
 }
 
+.geo-status-ip{
+    background-color: #FFD700;
+}
+
 .geo-title{
     background-color: #c8dfe1;
-    color:#004c6e;
-    font-weight: 500;
+    color:#00556b;
+    font-weight: 600;
     width:fit-content;
     padding:6px;
 }

@@ -7,7 +7,6 @@ import { getCollection } from 'astro:content';
 const layers = await getCollection('layers');
 var t = await getCollection('layers');
 
-export const prerender = false;
 const search = Astro.url.searchParams.get('status') || '';
 
 t = layers;

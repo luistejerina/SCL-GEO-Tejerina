@@ -7,7 +7,6 @@ import { getCollection } from 'astro:content';
 const products = await getCollection('products');
 var t = await getCollection('products');
 
-export const prerender = false;
 const search = Astro.url.searchParams.get('status') || '';
 
 t = products;

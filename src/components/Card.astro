@@ -5,17 +5,17 @@ const { name, status,slug,layers,division,hasLayers,image, leader, technical } =
 
 
 
-<div class="max-h-sm rounded overflow-hidden shadow-lg geo-card m-2">
+<div class="max-h-sm rounded-lg overflow-hidden shadow-2xl geo-card m-2 shadow-xl">
     <img class="w-full pt-10 h-48" src=`/scl-geo/${hasLayers == "false" ? "layers" : "products"}/${ image != null ? image.url : "backgroundv2.png"}` alt="Sunset in the mountains">
     <div class="px-4 py-3">      
-      <span class="text-md geo-title p-1 rounded-br-lg">
+      <span class="text-base geo-title p-1 rounded-br-lg line-clamp-2">
         { name } 
       </span>     
     </div>
-    <div class="px-4 pt-4 pb-2">
-      <span class=`inline-block  rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2 ${ status == 'Completed' ? 'geo-status' : 'geo-status-ip'}`> { status }</span>
+    <div class="px-4 pt-4 pb-2 items-center">
+      <span class=`inline-block rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2 ${ status == 'Completed' ? 'geo-status' : 'geo-status-ip'}`> { status }</span>
       <span class="inline-block geo-status rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2"> { division }</span>
       <span class=`inline-block geo-number rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2 ${ hasLayers == "false" ? 'invisible' : 'visible'}`>{ layers != null ? layers.length : 0 } layers</span> 
-      <span class="inline-block text-4xl text-white float-right"><a href={`${ hasLayers == "false" ? '/scl-geo/layer/' : '/scl-geo/product/' }${slug}`}>🔍</a></span>      
+      <span class="inline-block text-2xl text-white float-right items-center"><a href={`${ hasLayers == "false" ? '/scl-geo/layer/' : '/scl-geo/product/' }${slug}`}>👁️‍🗨️</a></span>      
     </div>   
   </div>

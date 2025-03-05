@@ -32,7 +32,7 @@ const status_array = layers.map((layer)=> layer.data.status);
   </script>
 <Layout>
 	<div class="pt-5 pb-5">
-		<select id="select" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+		<!-- <select id="select" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 			<option value=""></option>
 			{	status_array.map(c => {
 					if(search != '' && c == search)
@@ -40,9 +40,9 @@ const status_array = layers.map((layer)=> layer.data.status);
 						return <option value={c}>{c}</option>
 				})
 			}
-		</select>
+		</select> -->
 		</div>
-	  <div class="grid grid-cols-4 gap-4">
+	  <div class="grid md:grid-cols-4 gap-4 grid-cols-1">
 		{
         	t.map(product=>{				
 				const { slug, data } = product

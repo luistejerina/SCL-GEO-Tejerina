@@ -5,7 +5,7 @@ const { title, description,status, slug, layers,layers2, image, hasLayers, techn
 <div>
 <div class="grid grid-cols-2 gap-4">
     <div>
-        <a href="/scl-geo/product" class="hover:underline opacity-70">Volver atrás</a>
+       
         <p class="text-3xl pt-5 pb-5">{title}</p>
         <p class="prose">{description}</p>
         <div class="pt-4">
@@ -18,7 +18,7 @@ const { title, description,status, slug, layers,layers2, image, hasLayers, techn
             <ul class="list-none">
                 {
                     layers?.map(l =>{	
-                        var xx = layers2.filter(ll => ll.data.name == l.id)[0];			                        
+                        var xx = layers2.filter(ll => ll.data.name === l.id)[0];			                        
                         return ( 
                             <li class="py-2 uppercase">➡️ { xx.data.name } <a href={ xx.data.link}>🔗</a></li> 
                         )

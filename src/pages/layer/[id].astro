@@ -16,9 +16,9 @@ export async function getStaticPaths(){
 
 const { layer } = Astro.props
 const { data } = layer
-const { name,status, description,image } = data
+const { name,status, description,image,technical,leader } = data
 ---
 
 <Layout>
-    <DetailCard title={name} description={description} status={status} hasLayers="false" image={image}></DetailCard>
+    <DetailCard title={name} description={description} status={status} hasLayers="false" image={image} leader={leader} technical={technical}></DetailCard>
 </Layout>

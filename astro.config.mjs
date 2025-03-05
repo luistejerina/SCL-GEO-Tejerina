@@ -8,7 +8,7 @@ export default defineConfig({
 
   // your repository name goes here, enclosed in '/'
   base: 'scl-geo',
-
+  prefetch: false,
   output:'static',
 
   vite: {

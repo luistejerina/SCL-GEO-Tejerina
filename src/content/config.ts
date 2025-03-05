@@ -15,7 +15,7 @@ const products = defineCollection({
             url: z.string().nullable(),
             alt: z.string().nullable(),
         }).nullable(),
-        layers: z.array(reference('layers')).nullable(),
+        layers: z.array(reference('layers')).nullable().default([]),
     })
 });
 

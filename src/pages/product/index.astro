@@ -46,9 +46,9 @@ const status_array = products.map((product)=> product.data.status);
 		{
         	t.map(product=>{				
 				const { slug, data } = product
-				const { name, status, layers, division,image } = data
+				const { name, status, layers, division,image, leader, technical } = data
 				return ( 
-					<Card name={name} status={status} slug={slug} layers={layers} division={division} hasLayers="true" image={image}></Card> 
+					<Card name={name} status={status} slug={slug} layers={layers} division={division} leader={leader} technical={technical} hasLayers="true" image={image}></Card> 
 				)
 			})
 		}			

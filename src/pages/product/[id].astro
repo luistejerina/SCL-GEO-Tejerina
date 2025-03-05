@@ -1,12 +1,15 @@
 ---
 import type { GetStaticPaths } from "astro";
-import { getCollection } from "astro:content";
+import { getCollection,getEntries } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import DetailCard from '../../components/DetailCard.astro';
+
+const layers2 = await getCollection('layers');
 
 export async function getStaticPaths(){
 
     const products = await getCollection('products');
+   
 
     return products.map((product)=>({
         params: { id: product.slug},
@@ -15,10 +18,12 @@ export async function getStaticPaths(){
 };
 
 const { product } = Astro.props
-const { data } = product
-const { name,status, description, layers,image } = data
+const { data,  } = product
+const { name,status, description, layers,image,technical,leader } = data
+
+
 ---
 
 <Layout>
-    <DetailCard title={name} description={description} status={status} layers={layers} hasLayers="true" layer=false image={image}></DetailCard>
+    <DetailCard title={name} description={description} status={status} layers={layers} layers2={layers2} hasLayers="true" layer=false image={image} leader={leader} technical={technical}></DetailCard>
 </Layout>

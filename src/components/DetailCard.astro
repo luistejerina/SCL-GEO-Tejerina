@@ -1,6 +1,7 @@
 ---
-const { title, description,status, slug, layers,image, hasLayers} = Astro.props;
+import { getEntry, getEntries } from 'astro:content';
 
+const { title, description,status, slug, layers,layers2, image, hasLayers, technical, leader} = Astro.props;
 
 ---
 
@@ -11,6 +12,8 @@ const { title, description,status, slug, layers,image, hasLayers} = Astro.props;
         <p class="prose">{description}</p>
         <div class="pt-4">
             <span class=`inline-block rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2 ${ status == 'Completed' ? 'geo-status' : 'geo-status-ip'}`> { status }</span>
+            <span class="inline-block geo-technical-leader rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2"> { leader }</span>
+            <span class="inline-block geo-technical-leader rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2"> { technical }</span>
             <span class="inline-block bg-sky-500 rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2">{ layers != null ? layers.length : 0 } layers</span>    
         </div>
     </div>
@@ -18,3 +21,13 @@ const { title, description,status, slug, layers,image, hasLayers} = Astro.props;
         <img class="w-full h-96" src=`/scl-geo/${hasLayers == "false" ? "layers" : "products"}/${ image != null ? image.url : "backgroundv2.png"}` alt="Sunset in the mountains">
     </div>
 </div>
+<ul class="list-disc">
+    {
+        layers?.map(l =>{	
+            var xx = layers2.filter(ll => ll.data.name == l.id)[0];			                        
+            return ( 
+                <li>{ xx.data.name }</li> 
+            )
+        })
+    }
+</ul>

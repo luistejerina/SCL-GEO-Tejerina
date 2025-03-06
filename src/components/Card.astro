@@ -15,7 +15,7 @@ import { Icon } from 'astro-icon/components'
       </span>     
     </div>
     <div class="px-4 pt-4 pb-2 items-center">
-      <span class=`inline-block rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2 ${ status == 'Completed' ? 'geo-status' : 'geo-status-ip'}`> { status }</span>
+      <span class=`inline-block rounded-br-xl px-3 py-1 text-sm text-white mr-2 mb-2 ${ status == 'Completed' ? 'geo-status' : 'geo-status-ip'}`> { status }</span>
       <span class="inline-block geo-status rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2"> { division }</span>
       <span class=`inline-block geo-number rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2 ${ hasLayers == "false" ? 'invisible' : 'visible'}`>{ layers != null ? layers.length : 0 } layers</span> 
       <span class="inline-block geo-eye text-3xl float-right items-center"><a href={`${ hasLayers == "false" ? '/scl-geo/layer/' : '/scl-geo/product/' }${slug}`}><Icon name="mdi:eye" /></a></span>      

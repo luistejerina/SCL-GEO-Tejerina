@@ -25,7 +25,7 @@ const layers = defineCollection({
     schema: z.object({
         name: z.string(),        
         description: z.string(),
-        status: z.enum(['In Process', 'Completed']),
+        status: z.enum(['In process', 'Completed']),
         division: z.enum(['EDU','SPH','GDI','GIS','LMK','MIG','SCL']),
         link: z.string(),
         technical: z.string(),

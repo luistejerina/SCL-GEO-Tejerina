@@ -4,7 +4,7 @@ const { title, description,status, slug, layers,layers2, image, hasLayers, techn
 ---
 <div>
 <div class="grid grid-cols-2 gap-4">
-    <div>
+    <div class="">
         <p class="text-3xl pt-5 pb-5">{title}</p>
         <p class="prose">{description}</p>
         <div class="pt-4">
@@ -27,7 +27,7 @@ const { title, description,status, slug, layers,layers2, image, hasLayers, techn
         </div>
     </div>
     <div>
-        <img class="w-full" src=`/scl-geo/${hasLayers == "false" ? "layers" : "products"}/${ image.url != null ? image.url : "backgroundv2.png"}` alt="Sunset in the mountains">
+        <img class="w-full h-96 object-cover" src=`/scl-geo/${hasLayers == "false" ? "layers" : "products"}/${ image.url != null ? image.url :   hasLayers == "false" ? "background-layer.png" : "background-product.png" }` alt="Sunset in the mountains">
     </div>
 </div>
 

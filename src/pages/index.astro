@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro"
+import { Icon } from 'astro-icon/components'
+---
+
+<Layout>
+    <div class="grid grid-cols-2 gap-30 pt-5 pb-10 align-center">
+        <div>
+            <div class="max-h-sm rounded-lg overflow-hidden geo-card m-2 shadow-xl">
+                <div class="grid grid-cols-3 px-5 py-5 items-center">
+                    <div>
+                        <Icon name="mdi:file-document" class="text-9xl geo-eye"></Icon>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="font-bold text-2xl py-2">Products</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <a class="pt-10 float-right" href="/scl-geo/product">View more</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="max-h-sm rounded-lg overflow-hidden geo-card m-2 shadow-xl">
+                <div class="grid grid-cols-3 px-5 py-5 items-center">
+                    <div>
+                        <Icon name="mdi:layers" class="text-9xl geo-eye"></Icon>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="font-bold text-2xl py-2">Layers</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <a class="pt-10 float-right" href="/scl-geo/layer">View more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="text-center">
+        Si quiere colaborar con capas o productos que no ha encontrado en este catalogo, los invitamos a llenar el siguiente <a target="_blank" class="underline" href="https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=BRr7nR1fmkSJYGKry0eefct1V4ITbMFAhHgdcLq3i_RUMkZXWk80MVFWWVVCVlBDUEhSVE9HT0haUy4u">formulario</a>
+    </p>
+    
+</Layout>

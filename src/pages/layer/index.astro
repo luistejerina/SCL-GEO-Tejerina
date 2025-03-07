@@ -1,7 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Card from '../../components/Card.astro';
-
 import { getCollection } from 'astro:content';
 
 const layers = await getCollection('layers');
@@ -15,7 +14,6 @@ if(search != ''){
 }
 
 const status_array = layers.map((layer)=> layer.data.status);
-
 
 ---
 <script>

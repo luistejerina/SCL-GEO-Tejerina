@@ -5,32 +5,8 @@ import Card from '../../components/Card.astro';
 import { getCollection } from 'astro:content';
 
 const products = await getCollection('products');
-var t = await getCollection('products');
-
-const search = Astro.url.searchParams.get('status') || '';
-
-t = products;
-if(search != ''){
-	t = t.filter(product => product.data.status == search);
-}
-
-const status_array = products.map((product)=> product.data.status);
-
 
 ---
-<script>
-	
-	const select = document.getElementById('select') as HTMLSelectElement
-  
-	select?.addEventListener('change', () => {
-		const { value } = select.options[select.selectedIndex]
-		if(value != '')
-			document.location.href = '?status=' + value;
-		else
-			document.location.href = document.location.href.replace(/(\?.*)|(#.*)/g, "");
-	});
-
-  </script>
 <Layout>
 	<h4 class="font-bold">PRODUCTS</h4>
 	<div class="pb-5">
@@ -46,7 +22,7 @@ const status_array = products.map((product)=> product.data.status);
 		</div>
 	  <div class="grid md:grid-cols-3 gap-5 grid-cols-1">
 		{
-        	t.map(product=>{				
+        	products.map(product=>{				
 				const { slug, data } = product
 				const { name, status, layers, division,image, leader, technical } = data
 				return ( 

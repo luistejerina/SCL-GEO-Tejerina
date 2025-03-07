@@ -19,10 +19,8 @@ import { Icon } from 'astro-icon/components'
             <ul class="list-none">
                 {
                     layers?.map(l =>{	
-                        var xx = layers2.filter(ll => ll.data.name === l.id)[0];			                        
-                        return ( 
-                            <li class="py-2 uppercase">➡️ { xx.data.name } <a href={ xx.data.link}>🔗</a></li> 
-                        )
+                        var xx = layers2?.filter(ll => ll.data.name === l.id)[0];			                        
+                        
                     })
                 }
             </ul>

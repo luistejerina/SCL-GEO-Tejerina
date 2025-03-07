@@ -1,5 +1,5 @@
 ---
-const { name, status,slug,layers,division,hasLayers,image, leader, technical } = Astro.props;
+const { name, status,slug,layers,division,hasLayers,image, leader, technical,url } = Astro.props;
 import { Icon } from 'astro-icon/components'
 
 
@@ -8,7 +8,7 @@ import { Icon } from 'astro-icon/components'
 <div class="max-h-sm rounded-lg overflow-hidden shadow-2xl geo-card m-2 shadow-xl">
     <img class="w-full pt-10 h-48 object-cover" src=`/scl-geo/${hasLayers == "false" ? "layers" : "products"}/${ image.url != null ? image.url : hasLayers == "false" ? "background-layer.png" : "background-product.png" }` alt="Sunset in the mountains">
     <div class="px-4 py-3">      
-      <span class="text-base geo-title p-1 rounded-br-lg line-clamp-2">
+      <span class="prose text-base geo-title p-1 rounded-br-lg line-clamp-2">
         { name } 
       </span>     
     </div>

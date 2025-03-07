@@ -16,10 +16,10 @@ export async function getStaticPaths(){
 
 const { layer } = Astro.props
 const { data } = layer
-const { name,status, description,image,technical,leader } = data
+const { name,status, description,image,technical,leader,link } = data
 ---
 
 <Layout>
     <a href="/scl-geo/layer" class="hover:underline opacity-70" transition:persist>Volver atrás</a>
-    <DetailCard title={name} description={description} status={status} hasLayers="false" image={image} leader={leader} technical={technical}></DetailCard>
+    <DetailCard title={name} description={description} link={link} status={status} hasLayers="false" image={image} leader={leader} technical={technical}></DetailCard>
 </Layout>

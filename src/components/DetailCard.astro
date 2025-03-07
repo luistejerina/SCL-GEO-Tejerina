@@ -1,17 +1,19 @@
 ---
-const { title, description,status, slug, layers,layers2, image, hasLayers, technical, leader} = Astro.props;
-
+const { title, description,status, slug, layers,layers2, image, hasLayers, technical, leader,link} = Astro.props;
+import { Icon } from 'astro-icon/components'
 ---
 <div>
 <div class="grid grid-cols-2 gap-4">
     <div class="">
-        <p class="text-3xl pt-5 pb-5">{title}</p>
-        <p class="prose">{description}</p>
-        <div class="pt-4">
+        <p class="prose text-3xl pt-5 pb-5">{title}</p>
+        <p class="prose pb-5">{description}</p>
+        <a class="inline-block geo-eye" target="_blank" href={link}>Resource access →</Icon></a>
+        <div class="pt-5">
             <span class=`inline-block rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2 ${ status == 'Completed' ? 'geo-status' : 'geo-status-ip'}`> { status }</span>
             <span class="inline-block geo-technical-leader rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2"> { leader }</span>
             <span class="inline-block geo-technical-leader rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2"> { technical }</span>
             <span class="inline-block bg-sky-500 rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2">{ layers != null ? layers.length : 0 } layers</span>    
+            
         </div>
         <div class="grid grid-cols-1 gap-4 pt-10 px-1">
             <ul class="list-none">
@@ -25,6 +27,7 @@ const { title, description,status, slug, layers,layers2, image, hasLayers, techn
                 }
             </ul>
         </div>
+        
     </div>
     <div>
         <img class="w-full h-96 object-cover" src=`/scl-geo/${hasLayers == "false" ? "layers" : "products"}/${ image.url != null ? image.url :   hasLayers == "false" ? "background-layer.png" : "background-product.png" }` alt="Sunset in the mountains">

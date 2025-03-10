@@ -7,7 +7,7 @@ const products = defineCollection({
         description: z.string(),
         status: z.enum(['In process', 'Completed']),
         type: z.string(),
-        division: z.enum(['EDU','SPH','GDI','GIS','LMK','MIG','SCL',nan]),
+        division: z.enum(['EDU','SPH','GDI','GIS','LMK','MIG','SCL','ND']),
         link: z.string(),
         technical: z.string(),
         leader: z.string(),

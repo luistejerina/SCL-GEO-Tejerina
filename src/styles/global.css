@@ -12,30 +12,35 @@
 }
 
 .geo-number{
-    background-color: #019cdd;
+    background-color: #009ade;
 }
 
 .geo-status{
-    background-color: #8dba3b;
+    background-color: #8dba38;
 }
 
 .geo-status-ip{
-    background-color: #FFD700;
+    background-color: #a6a6a6;
 }
 
 .geo-title{
-    background-color: #c8dfe1;
-    color:#00556b;
+    background-color: #ccdce3;
+    color:#005073;
     font-weight: 600;
     width:fit-content;
-    padding:6px;
+    padding:3px;
 }
 
 .geo-technical-leader{
-    background-color: #4d839d;
+    background-color: #4c849d;
     color: white;
 }
 
 .geo-eye {
-    color:#1479d5;
+    color:#005073;
+}
+
+.geo-btn{
+    background-color:#005073;
+    color: white;
 }

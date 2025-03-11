@@ -5,13 +5,11 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://maurodeoliveira.github.io',
-
+  site: 'https://luistejerina.github.io',
   // your repository name goes here, enclosed in '/'
-  base: 'scl-geo',
+  base: 'SCL-GEO-Tejerina',
   prefetch: false,
   output:'static',
-
   vite: {
       plugins: [tailwindcss()],
     },

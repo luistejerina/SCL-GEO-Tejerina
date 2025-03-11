@@ -6,7 +6,7 @@ import { Icon } from 'astro-icon/components'
 ---
 
 <div class="max-h-sm rounded-lg overflow-hidden shadow-2xl geo-card m-2 shadow-xl">
-    <img class="w-full pt-10 h-48 object-cover" src=`/scl-geo/${hasLayers == "false" ? "layers" : "products"}/${ image.url != null ? image.url : hasLayers == "false" ? "background-layer.png" : "background-product.png" }` alt="Sunset in the mountains">
+    <img class="w-full pt-10 h-48 object-cover" src=`/SCL-GEO-Tejerina/${hasLayers == "false" ? "layers" : "products"}/${ image.url != null ? image.url : hasLayers == "false" ? "background-layer.png" : "background-product.png" }` alt="Sunset in the mountains">
     <div class="px-4 py-3">      
       <span class="prose text-base geo-title p-1 rounded-br-lg line-clamp-2">
         { name } 
@@ -16,6 +16,6 @@ import { Icon } from 'astro-icon/components'
       <span class=`inline-block rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2 ${ status == 'Completed' ? 'geo-status' : 'geo-status-ip'}`> { status }</span>
       <span class="inline-block geo-status rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2"> { division }</span>
       <span class=`inline-block geo-number rounded-br-lg px-3 py-1 text-sm text-white mr-2 mb-2 ${ hasLayers == "false" ? 'invisible' : 'visible'}`>{ layers != null ? layers.length : 0 } layers</span> 
-      <span class="inline-block geo-eye text-3xl float-right items-center"><a href={`${ hasLayers == "false" ? '/scl-geo/layer/' : '/scl-geo/product/' }${slug}`}><Icon name="mdi:eye" /></a></span>      
+      <span class="inline-block geo-eye text-3xl float-right items-center"><a href={`${ hasLayers == "false" ? '/SCL-GEO-Tejerina/layer/' : '/SCL-GEO-Tejerina/product/' }${slug}`}><Icon name="mdi:eye" /></a></span>      
     </div>   
   </div>
